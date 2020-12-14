@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+
+<body>
+    <section class="main_div">
+        <div class="container-fluid">
+            <div class="screen_1">
+                <div id="rio_div" class="rio_annimation d-flex justify-content-center align-items-center">
+                    <div class="img1" id="img_1"><img src="./images/logo-r.png" alt=""></div>
+                    <div class="img2" id="img_2"><img src="./images/logo-i.png" alt=""></div>
+                    <div class="img3" id="img_3"><img src="./images/logo-o.png" alt=""></div>
+                    <div class="img4" id="img_4"><img src="./images/logo-2.png" alt=""></div>
+                </div>
+            </div>
+            <div class="banner">
+                <div class="rio_2"><img src="./images/logo-date.png" alt=""></div>
+                <div class="trees d-flex justify-content-between">
+                    <div class="tree_1 ">
+                        <img src="./images/rama1.png" alt="">
+                    </div>
+                    <div class="tree_2 ">
+                        <img src="./images/rama2.png" alt="">
+                    </div>
+                </div>
+                <div class="d-flex btm_img justify-content-around flex-wrap btn_flex_padding">
+
+                    <div class="btn">
+                        <div id="button_1">VIDEOS</div>
+                    </div>
+                    <div class="birds_img">
+                        <div class="center_img">
+                            <img src="./images/cast.png" alt="">
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <div id="button_2">PHOTOS</div>
+                    </div>
+                </div>
+                <div class="monkey" id="mon_key">
+                    <img class="mono" src="./images/mono.png" alt="">
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js"></script>
+    <script>
+        var t1 = new TimelineMax();
+
+        t1.to('#img_1', 1, {
+                autoAlpha: 1,
+                scale: 1.2,
+                ease: Elastic.easeInOut.config(1, 0.3),
+            }, '-=1')
+            .to('#img_2', 1, {
+                autoAlpha: 1,
+                scale: 1.2,
+                ease: Elastic.easeInOut.config(1, 0.3),
+            }, '-=.1')
+            .to('#img_3', 1, {
+                autoAlpha: 1,
+                scale: 1.2,
+                ease: Elastic.easeInOut.config(1, 0.3),
+            }, '-=.1')
+            .to('#img_4', 1, {
+                autoAlpha: 1,
+                scale: 1.2,
+                ease: Elastic.easeInOut.config(1, 0.3),
+            }, '-=.1')
+            .to('#img_1', 0.8, {
+                autoAlpha: 0,
+                scale: 1.0,
+                ease: Elastic.easeOut.config(1, 0.3),
+            }, '+=1.2')
+            .to('#img_2', 0.7, {
+                autoAlpha: 0,
+                scale: 1.0,
+                ease: Elastic.easeOut.config(1, 0.3),
+            }, '+=1.3')
+            .to('#img_3', 0.6, {
+                autoAlpha: 0,
+                scale: 1.0,
+                ease: Elastic.easeOut.config(1, 0.3),
+            }, '+=1.4')
+            .to('#img_4', 0.5, {
+                autoAlpha: 0,
+                scale: 1.0,
+                ease: Elastic.easeOut.config(1, 0.3),
+            }, '+=1.5')
+            .to('.screen_1', 0.3, {
+                autoAlpha: 0,
+                display: 'none',
+            }, 'same-=0.2')
+            .to('.banner', 0.3, {
+                autoAlpha: 1,
+            }, 'same-=0.2')
+            .duration('2.5')
+            .to('#mon_key', 5, {
+                rotation: 20,
+                transformOrigin: 'center top',
+                repeat: -1,
+                yoyo: true,
+                ease: Power2.easeInOut,
+            }, 'abc')
+            .to('#button_1,#button_2', 5, {
+                opacity: 1,
+                scale: 1.3,
+                margin: 0,
+                repeat: -1,
+                yoyo: true,
+                ease: "bounce.out",
+            }, 'abc');
+    </script>
+</body>
+
+</html>
